@@ -13,8 +13,9 @@ import android.widget.TextView;
 
 public class PinPadView extends FrameLayout implements View.OnClickListener {
 
-    private EditText mPasswordField;
+    private EditText passwordField;
     private OnKeyboardClickedListener listener;
+    private int passwordLength;
 
     public PinPadView(Context context) {
         super(context);
@@ -37,8 +38,8 @@ public class PinPadView extends FrameLayout implements View.OnClickListener {
     }
 
     private void initViews() {
-        mPasswordField = $(R.id.password_field);
-        mPasswordField.addTextChangedListener(new TextWatcher() {
+        passwordField = $(R.id.password_field);
+        passwordField.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -78,19 +79,19 @@ public class PinPadView extends FrameLayout implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v.getTag() != null && v.getTag().equals("number_button")) {
-            mPasswordField.append(((TextView) v).getText());
+            passwordField.append(((TextView) v).getText());
             listener.onKeyboardKeyNumberClicked(((TextView) v).getText().charAt(0));
             return;
         }
 
         switch (v.getId()) {
             case R.id.t9_key_clear: {
-                mPasswordField.setText(null);
+                passwordField.setText(null);
                 listener.onKeyboardKeyClearClicked();
             }
             break;
             case R.id.t9_key_backspace: {
-                Editable editable = mPasswordField.getText();
+                Editable editable = passwordField.getText();
                 int charCount = editable.length();
                 if (charCount > 0) {
                     editable.delete(charCount - 1, charCount);
@@ -102,13 +103,12 @@ public class PinPadView extends FrameLayout implements View.OnClickListener {
     }
 
     public String getInputText() {
-        return mPasswordField.getText().toString();
+        return passwordField.getText().toString();
     }
 
-    private int passwordLength;
     public void setPasswordLength(int maxLength) {
         passwordLength = maxLength;
-        mPasswordField.setFilters(new InputFilter[]{new InputFilter.LengthFilter(passwordLength)});
+        passwordField.setFilters(new InputFilter[]{new InputFilter.LengthFilter(passwordLength)});
     }
 
     protected <T extends View> T $(@IdRes int id) {

@@ -8,15 +8,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:background="#eeeeee"
+        android:background="@null"
         android:enabled="false"
-        android:minHeight="48dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
         android:singleLine="true"
         android:gravity="center"
         android:inputType="numberPassword"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
+        android:textSize="40sp"/>
 
     <TableLayout
         android:id="@+id/keyboard"
@@ -24,8 +21,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_gravity="center"
-        android:showDividers="beginning|middle|end">
+        android:layout_gravity="center">
 
         <TableRow style="@style/keyboard_row">
 
@@ -33,13 +29,11 @@
                 android:gravity="center"
                 android:id="@+id/t9_key_1"
                 style="@style/keyboard_number_button"
-                android:textColor="#37474f"
                 android:text="@string/number_one" />
 
             <TextView
                 android:gravity="center"
                 android:id="@+id/t9_key_2"
-                android:textColor="#37474f"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 style="@style/keyboard_number_button"
@@ -48,7 +42,6 @@
             <TextView
                 android:gravity="center"
                 android:id="@+id/t9_key_3"
-                android:textColor="#37474f"
                 style="@style/keyboard_number_button"
                 android:text="@string/number_three" />
         </TableRow>
@@ -58,14 +51,12 @@
             <TextView
                 android:gravity="center"
                 android:id="@+id/t9_key_4"
-                android:textColor="#37474f"
                 style="@style/keyboard_number_button"
                 android:text="@string/number_four" />
 
             <TextView
                 android:gravity="center"
                 android:id="@+id/t9_key_5"
-                android:textColor="#37474f"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 style="@style/keyboard_number_button"
@@ -74,7 +65,6 @@
             <TextView
                 android:gravity="center"
                 android:id="@+id/t9_key_6"
-                android:textColor="#37474f"
                 style="@style/keyboard_number_button"
                 android:text="@string/number_six" />
         </TableRow>
@@ -84,14 +74,12 @@
             <TextView
                 android:gravity="center"
                 android:id="@+id/t9_key_7"
-                android:textColor="#37474f"
                 style="@style/keyboard_number_button"
                 android:text="@string/number_seven" />
 
             <TextView
                 android:gravity="center"
                 android:id="@+id/t9_key_8"
-                android:textColor="#37474f"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 style="@style/keyboard_number_button"
@@ -100,7 +88,6 @@
             <TextView
                 android:gravity="center"
                 android:id="@+id/t9_key_9"
-                android:textColor="#37474f"
                 style="@style/keyboard_number_button"
                 android:text="@string/number_nine" />
         </TableRow>
@@ -110,15 +97,13 @@
             <TextView
                 android:gravity="center"
                 android:id="@+id/t9_key_clear"
-                style="@style/keyboard_button"
-                android:textColor="#37474f"
                 android:text="@string/btn_clear"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:tag="@string/btn_clear"
+                style="@style/keyboard_number_button"/>
 
             <TextView
                 android:gravity="center"
                 android:id="@+id/t9_key_0"
-                android:textColor="#37474f"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 style="@style/keyboard_number_button"
@@ -127,10 +112,9 @@
             <TextView
                 android:gravity="center"
                 android:id="@+id/t9_key_backspace"
-                android:textColor="#37474f"
-                style="@style/keyboard_button"
                 android:text="@string/btn_backspace"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:tag="@string/btn_backspace"
+                style="@style/keyboard_number_button" />
         </TableRow>
     </TableLayout>
 </LinearLayout>
